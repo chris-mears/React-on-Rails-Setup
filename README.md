@@ -27,7 +27,7 @@ end
 4. Set up controller methods
 ...CRUD
 ...white list params
-...example
+...example:
 ```Ruby
 class Api::CreaturesController < ApplicationController
   def index
@@ -71,7 +71,59 @@ class Api::CreaturesController < ApplicationController
   end
 end
 ```
+5. Set up React
+```Javascript
+create-react-app client
+cd client
+npm i axios styled-components react-router-dom
+```
+6. Create a package.json file at the root level and add this JSON
+```Javascript
+{
+  "name": "YOUR PROJECT NAME",
+  "engines": {
+    "node": "8.7.0"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  }
+}
+```
+Note: "YOUR PROJECT NAME" should be the name of your root directory
+7. Set up a proxy for our dev server within the client level `package.json
+```Javascript
+"proxy": "http://localhost:3001",
+```
+8. Install forman if not installed alrady
+```
+gem install foreman
+```
 
+9. Create a Procfile.dev
+```
+web: sh -c 'cd client && PORT=3000 npm start'
+api: rails s -p 3001
+```
+
+10. Create a Procfile
+```
+web: rails s
+```
+
+11. Setup Heroku
+```
+heroku create
+# Tell Heroku that you want both the Ruby and Node environments to build your project in.
+heroku buildpacks:add --index 1 heroku/ruby 
+heroku buildpacks:add --index 2 heroku/nodejs
+
+git push heroku master
+
+# Set up your production database
+heroku run rails db:migrate db:seed
+```
 
 
 
