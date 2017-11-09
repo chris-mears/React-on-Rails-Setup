@@ -15,7 +15,7 @@ rails g model //Model fied name
 rails g controller //PluralModel
 ```
 ```Bash
-rails db:migrate //only after verything is good to go
+rails db:migrate //only after everything is good to go
 ```
 3. setup routes
 ```Ruby
@@ -92,6 +92,7 @@ npm i axios styled-components react-router-dom
 }
 ```
 Note: "YOUR PROJECT NAME" should be the name of your root directory
+
 7. Set up a proxy for our dev server within the client level `package.json
 ```Javascript
 "proxy": "http://localhost:3001",
@@ -113,7 +114,7 @@ web: rails s
 ```
 
 11. Setup Heroku
-```
+```Ruby
 heroku create
 # Tell Heroku that you want both the Ruby and Node environments to build your project in.
 heroku buildpacks:add --index 1 heroku/ruby 
