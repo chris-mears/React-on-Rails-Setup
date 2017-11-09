@@ -25,9 +25,12 @@ end
 ```
 
 4. Set up controller methods
-...CRUD
-...white list params
-...example:
+
+CRUD, white list params
+
+<details>
+  <summary> Example Code</summary>
+  <p>
 ```Ruby
 class Api::CreaturesController < ApplicationController
   def index
@@ -77,6 +80,9 @@ create-react-app client
 cd client
 npm i axios styled-components react-router-dom
 ```
+  </p>
+</details>
+
 6. Create a package.json file at the root level and add this JSON
 ```Javascript
 {
