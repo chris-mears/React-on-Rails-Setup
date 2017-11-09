@@ -82,7 +82,7 @@ npm i axios styled-components react-router-dom
 {
   "name": "YOUR PROJECT NAME",
   "engines": {
-    "node": "8.7.0"
+    "node": "8.9.0"
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
@@ -113,7 +113,12 @@ api: rails s -p 3001
 web: rails s
 ```
 
-11. Setup Heroku
+11. Test app in development
+```
+foreman start -f Procfile.dev
+```
+
+12. Setup Heroku
 ```Ruby
 heroku create
 # Tell Heroku that you want both the Ruby and Node environments to build your project in.
@@ -124,6 +129,9 @@ git push heroku master
 
 # Set up your production database
 heroku run rails db:migrate db:seed
+
+#If you need to create db first
+heroku addons:create heroku-postgresql:hobby-dev
 ```
 
 
