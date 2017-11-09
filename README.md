@@ -128,7 +128,8 @@ heroku buildpacks:add --index 2 heroku/nodejs
 git push heroku master
 
 # Set up your production database
-heroku run rails db:migrate db:seed
+# After updating seed file
+heroku run rails db:migrate db:seed 
 
 #If you need to create db first
 heroku addons:create heroku-postgresql:hobby-dev
