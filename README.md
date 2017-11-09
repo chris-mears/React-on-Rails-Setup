@@ -83,7 +83,7 @@ npm i axios styled-components react-router-dom
   </p>
 </details>
 
-6. Create a package.json file at the root level and add this JSON
+5. Create a package.json file at the root level and add this JSON
 ```Javascript
 {
   "name": "YOUR PROJECT NAME",
@@ -99,32 +99,32 @@ npm i axios styled-components react-router-dom
 ```
 Note: "YOUR PROJECT NAME" should be the name of your root directory
 
-7. Set up a proxy for our dev server within the client level `package.json
+6. Set up a proxy for our dev server within the client level `package.json
 ```Javascript
 "proxy": "http://localhost:3001",
 ```
-8. Install forman if not installed alrady
+7. Install forman if not installed already
 ```
 gem install foreman
 ```
 
-9. Create a Procfile.dev
+8. Create a Procfile.dev
 ```
 web: sh -c 'cd client && PORT=3000 npm start'
 api: rails s -p 3001
 ```
 
-10. Create a Procfile
+9. Create a Procfile
 ```
 web: rails s
 ```
 
-11. Test app in development
+10. Test app in development
 ```
 foreman start -f Procfile.dev
 ```
 
-12. Setup Heroku
+11. Setup Heroku
 ```Ruby
 heroku create
 # Tell Heroku that you want both the Ruby and Node environments to build your project in.
