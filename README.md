@@ -26,7 +26,7 @@ end
 
 4. Set up controller methods
 
-CRUD, white list params
+* CRUD, white list params
 
 <details>
   <summary> Example Code</summary>
